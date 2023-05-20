@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
-import {Button, Typography} from "@mui/material";
+import {Button} from "@mui/material";
 import useStyles from "./styles";
+import axios from "axios";
 
 const FileUpload = (props) => {
 
@@ -8,9 +9,13 @@ const FileUpload = (props) => {
     const fileInputRef = useRef(null)
     const [filename, setFilename] = useState(null)
 
-    function handleClick(){
+    function handleClick() {
         console.log(fileInputRef.current.files[0])
         props.setStateScreen(1)
+        axios.post("/dataset", fileInputRef.current.files[0],
+            {headers: {"Content-Type": "multipart/form-data"}}).then(res => {
+            console.log(res.data)
+        })
     }
 
     return (
@@ -51,7 +56,8 @@ let openButton = {
     lineHeight: "33px",
     color: "#181818",
     marginLeft: "10px",
-    height: "8vh"
+    height: "8vh",
+    width: "8vw"
 }
 
 let sendButton = {
