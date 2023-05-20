@@ -2,8 +2,7 @@ import './App.css';
 import InitPage from "./pages/InitPage";
 import shishka from "./images/ShishkaClassificator.svg"
 import image1 from "./images/image1.svg"
-import image2 from "./images/image 2.svg"
-import image3 from "./images/image 3.svg"
+
 
 function App() {
     return (
