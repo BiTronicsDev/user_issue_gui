@@ -10,48 +10,6 @@ export default makeStyles(theme => ({
         lineHeight: 1,
     },
 
-    checkButtonWt: {
-        cursor: "pointer",
-        appearance: "none",
-        borderRadius: "4px",
-        background: "#ffffff",
-        float: "left",
-        color: "#1565C0",
-        width: "200px",
-        height: "44px",
-        fontSize: "16px",
-        border: "1px solid #1564c0",
-        textTransform: "uppercase",
-        fontWeight: 400,
-        fontFamily: "Roboto",
-    },
-
-
-    testButtonSubmit: {
-        cursor: "pointer",
-        appearance: "none",
-        borderRadius: "4px",
-        background: "#1665c1",
-        color: "#ffffff",
-        width: "200px",
-        height: "44px",
-        fontSize: "16px",
-        border: "1px solid #1665c1",
-        textTransform: "uppercase",
-        fontWeight: 400,
-        fontFamily: "Roboto",
-        "&:hover":{
-            background: "#115eb6",
-            borderColor: "#115eb6",
-            color: "#ffffff",
-        },
-        "&:disabled":{
-            background: "#ebebeb",
-            borderColor: "#98999d",
-            color: "#98999d",
-        },
-    },
-
     container: {
         display: "flex",
         flexDirection: "column",
@@ -97,15 +55,5 @@ export default makeStyles(theme => ({
         color: "#E6E6E6"
     },
 
-    openButton: {
-        background: "#00F43A",
-        borderRadius: "20px",
-        fontFamily: 'Nunito',
-        fontStyle: "normal",
-        fontWeight: 400,
-        fontSize: "24px",
-        lineHeight: "33px",
-        color: "#181818"
-    }
 }))
 
