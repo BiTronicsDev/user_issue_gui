@@ -5,8 +5,18 @@ import shutil
 from NeuralData.classifier import ShishkaClassifier
 from fastapi.responses import FileResponse, JSONResponse
 from starlette.status import HTTP_400_BAD_REQUEST
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
@@ -34,6 +44,7 @@ async def upload_file(file: UploadFile = File(...)):
             return FileResponse("files/answer.csv")
     else:
         return JSONResponse({'status': 'bad_file'}, status_code=HTTP_400_BAD_REQUEST)
+
 
 if __name__ == '__main__':
     uvicorn.run(app)
