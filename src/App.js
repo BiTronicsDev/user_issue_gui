@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import InitPage from "./pages/InitPage";
+import shishka from "./images/ShishkaClassificator.svg"
+import image1 from "./images/image1.svg"
+import image2 from "./images/image 2.svg"
+import image3 from "./images/image 3.svg"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <img style={{width: "400px", marginTop: "80px"}} src={shishka}/>
+            <InitPage/>
+            <footer className="App-footer">
+                <img className={"image"} src={image1}/>
+            </footer>
+        </div>
+    );
 }
 
 export default App;
