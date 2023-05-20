@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Button} from "@mui/material";
 import useStyles from "./styles";
 import axios from "axios";
@@ -8,13 +8,15 @@ const FileUpload = (props) => {
     const classes = useStyles();
     const fileInputRef = useRef(null)
     const [filename, setFilename] = useState(null)
+    const formData = new FormData()
 
     function handleClick() {
-        console.log(fileInputRef.current.files[0])
-        props.setStateScreen(1)
-        axios.post("/dataset", fileInputRef.current.files[0],
+        let name = fileInputRef.current.files[0].name
+        formData.append("file", fileInputRef.current.files[0])
+        axios.post("/dataset", formData,
             {headers: {"Content-Type": "multipart/form-data"}}).then(res => {
-            console.log(res.data)
+            props.setData(res.data)
+            props.setStateScreen(1)
         })
     }
 
@@ -51,8 +53,8 @@ let openButton = {
     borderRadius: "20px",
     fontFamily: 'Nunito',
     fontStyle: "normal",
-    fontWeight: 600,
-    fontSize: "16px",
+    fontWeight: 400,
+    fontSize: "24px",
     lineHeight: "33px",
     color: "#181818",
     marginLeft: "10px",
@@ -66,8 +68,10 @@ let sendButton = {
     borderRadius: "20px",
     fontFamily: 'Nunito',
     fontsStyle: "normal",
-    fontWeight: "600",
-    fontSize: "16px",
+    fontWeight: 400,
+    fontSize: "24px",
     lineHeight: "33px",
     color: "#00F43A",
+    width: "24vw",
+    height: "8vh"
 }
