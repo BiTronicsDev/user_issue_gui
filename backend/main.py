@@ -19,13 +19,17 @@ app.add_middleware(
 )
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
 @app.post("/dataset")
 async def upload_file(file: UploadFile = File(...)):
+    """
+    Фунциия upload_file принимает файл, с помощью предобученной моделиShishkaClassifier
+    предсказывает возможное появление переквалификации статуса обращения и возвращает
+    измененный файл с этими предсказанными данными.
+
+    :param file: UploadFile: Receive the file from the client
+    :return: A fileresponse object
+    :doc-author: zayycev22
+    """
     if file.filename.split('.')[1] == 'csv':
         with open(f"files/{file.filename}", "wb") as f:
             shutil.copyfileobj(file.file, f)
