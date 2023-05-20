@@ -1,4 +1,5 @@
 import pandas as pd
+import uvicorn as uvicorn
 from fastapi import FastAPI, UploadFile, File
 import shutil
 from NeuralData.classifier import ShishkaClassifier
@@ -33,3 +34,6 @@ async def upload_file(file: UploadFile = File(...)):
             return FileResponse("files/answer.csv")
     else:
         return JSONResponse({'status': 'bad_file'}, status_code=HTTP_400_BAD_REQUEST)
+
+if __name__ == '__main__':
+    uvicorn.run(app)
