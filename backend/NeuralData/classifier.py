@@ -20,6 +20,10 @@ class ShishkaClassifier:
     @staticmethod
     def set_requal(df: pd.DataFrame, ans: list) -> pd.DataFrame:
         df['Тип обращения итоговый'] = ans
+        df['Тип обращения итоговый'] = df['Тип обращения итоговый'].map(Consts.map_type)
+        df['Тип переклассификации'] = df.apply(
+            lambda row: ShishkaClassifier.get_requalification_type(row['Тип обращения на момент подачи'], row['Тип обращения итоговый']),
+            axis=1)
         return df
 
     def _set_date(self) -> None:
