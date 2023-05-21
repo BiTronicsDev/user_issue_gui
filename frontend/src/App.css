@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background: url("images/svg_fon.svg");
+  background-size: 100%;
+  backgroundPosition: "center";
+  backgroundRepeat: "no-repeat";
+
 }
 
 .App-logo {

@@ -6,7 +6,7 @@ export default makeStyles(theme => ({
   container: {
     background: "#181818",
     borderRadius: "50px",
-    width: "54vw",
+    width: "58vw",
     marginTop: 50,
     marginBottom: 50,
     display: "flex",

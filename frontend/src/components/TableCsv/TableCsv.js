@@ -26,6 +26,7 @@ const TableCsv = (props) => {
                             <TableCell align={index ? "right" : "center"} style={{color: "#FFFFFF",background: "#272727"}}>{row[6]}</TableCell>
                             <TableCell align={index ? "right" : "center"} style={{color: "#FFFFFF",background: "#272727"}}>{row[7]}</TableCell>
                             <TableCell align={index ? "right" : "center"} style={{color: "#FFFFFF",background: "#272727"}}>{row[11]}</TableCell>
+                            <TableCell align={index ? "right" : "center"} style={{color: "#FFFFFF",background: "#272727"}}>{row[9]}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

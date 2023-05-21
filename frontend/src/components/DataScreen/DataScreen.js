@@ -13,7 +13,8 @@ const DataScreen = (props) => {
         if(props.data !== null){
             let data = props.data
             data = data.split("\n")
-            const arrayOfArrays = data.map(str => str.split(','));
+            let arrayOfArrays = data.map(str => str.split(','));
+            arrayOfArrays.splice(11, 1)
             setContent(arrayOfArrays)
         }
     }, [])
@@ -62,6 +63,6 @@ let downloadButton = {
     fontSize: "16px",
     lineHeight: "33px",
     color: "#181818",
-    marginLeft: "12vw",
+    marginLeft: "15vw",
     height: "6vh"
 }
