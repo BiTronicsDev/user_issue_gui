@@ -24,7 +24,7 @@ class ShishkaClassifier:
         :param ticketStartType: Determine the type of ticket that was created
         :param ticketFinalType: Determine the type of requalification
         :return: The type of the requalification
-        :doc-author: яфннсум22
+        :doc-author: zayycev22
         """
         if ticketStartType == ticketFinalType:
             return 0
