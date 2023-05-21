@@ -25,7 +25,7 @@ export default makeStyles(theme => ({
 
     title: {
         fontStyle: "normal",
-        fontWeight: 400,
+        fontWeight: 600,
         fontSize: 40,
         color: "#00F43A",
         fontFamily: "Nunito",
